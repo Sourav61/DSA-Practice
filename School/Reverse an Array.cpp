@@ -1,4 +1,4 @@
-https://practice.geeksforgeeks.org/problems/reverse-an-array/0/?category[]=Arrays&category[]=Arrays&problemStatus=unsolved&difficulty[]=-2&page=1&query=category[]ArraysproblemStatusunsolveddifficulty[]-2page1category[]Arrays#
+// https://practice.geeksforgeeks.org/problems/reverse-an-array/0/?category[]=Arrays&category[]=Arrays&problemStatus=unsolved&difficulty[]=-2&page=1&query=category[]ArraysproblemStatusunsolveddifficulty[]-2page1category[]Arrays#
 
 #include<iostream>
 using namespace std;
