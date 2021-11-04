@@ -1,4 +1,4 @@
-https://practice.geeksforgeeks.org/problems/learn-to-comment/1/?problemStatus=solved&difficulty[]=0&page=1&query=problemStatussolveddifficulty[]0page1
+// https://practice.geeksforgeeks.org/problems/learn-to-comment/1/?problemStatus=solved&difficulty[]=0&page=1&query=problemStatussolveddifficulty[]0page1
 
 // { Driver Code Starts
 //Initial Template for C
