@@ -1,4 +1,4 @@
-https://practice.geeksforgeeks.org/problems/pattern-printing1347/1/?category[]=pattern-printing&category[]=pattern-printing&problemStatus=unsolved&difficulty[]=-2&page=1&query=category[]pattern-printingproblemStatusunsolveddifficulty[]-2page1category[]pattern-printing#
+// https://practice.geeksforgeeks.org/problems/pattern-printing1347/1/?category[]=pattern-printing&category[]=pattern-printing&problemStatus=unsolved&difficulty[]=-2&page=1&query=category[]pattern-printingproblemStatusunsolveddifficulty[]-2page1category[]pattern-printing#
 
 // { Driver Code Starts
 #include<bits/stdc++.h> 
