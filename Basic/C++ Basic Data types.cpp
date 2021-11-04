@@ -1,4 +1,4 @@
-https://practice.geeksforgeeks.org/problems/c-basic-data-types3128/1/?problemStatus=solved&difficulty[]=-1&page=1&query=problemStatussolveddifficulty[]-1page1
+// https://practice.geeksforgeeks.org/problems/c-basic-data-types3128/1/?problemStatus=solved&difficulty[]=-1&page=1&query=problemStatussolveddifficulty[]-1page1
 
 // Initial template for C++
 
