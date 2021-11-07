@@ -1,4 +1,4 @@
-https://practice.geeksforgeeks.org/problems/game-with-nos3123/1/?problemStatus=unsolved&difficulty[]=-2&difficulty[]=-1&page=1&category[]=Arrays&query=problemStatusunsolveddifficulty[]-2difficulty[]-1page1category[]Arrays#
+// https://practice.geeksforgeeks.org/problems/game-with-nos3123/1/?problemStatus=unsolved&difficulty[]=-2&difficulty[]=-1&page=1&category[]=Arrays&query=problemStatusunsolveddifficulty[]-2difficulty[]-1page1category[]Arrays#
 
 // { Driver Code Starts
 #include<bits/stdc++.h>
