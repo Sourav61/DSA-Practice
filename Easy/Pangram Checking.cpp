@@ -18,13 +18,13 @@ class Solution
         bool l[26]={false};
         for(int i=0;i<str.size();i++){
             
-            if(str[i]>='a' && str[i]<='z'){
-                l[str[i]-'a']=1;
-            }
+//             if(str[i]>='a' && str[i]<='z'){
+//                 l[str[i]-'a']=1;
+//             }
             
-            if(str[i]>='A' && str[i]<='Z'){
-                l[str[i]-'A']=1;
-            }
+//             if(str[i]>='A' && str[i]<='Z'){
+//                 l[str[i]-'A']=1;
+//             }
             
             if(int(str[i])>=97 && int(str[i])<=122){
                 l[str[i]-97]=1;
