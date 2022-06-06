@@ -29,43 +29,67 @@ public:
 
         // ==============================          Approach-2        =====================================
 
-        int n = heights.size();
-        stack<int> st;
+        // int n = heights.size();
+        // stack<int> st;
 
-        int leftsmall[n], rightsmall[n];
+        // int leftsmall[n], rightsmall[n];
 
-        for(int i=0;i<n;i++){
-            while(!st.empty() && heights[st.top()] >= heights[i]){
-                st.pop();
-            }
+        // for(int i=0;i<n;i++){
+        //     while(!st.empty() && heights[st.top()] >= heights[i]){
+        //         st.pop();
+        //     }
 
-            if(st.empty())
-                leftsmall[i] = 0;
-            else
-                leftsmall[i] = st.top() + 1;
-            st.push(i);
-        }
+        //     if(st.empty())
+        //         leftsmall[i] = 0;
+        //     else
+        //         leftsmall[i] = st.top() + 1;
+        //     st.push(i);
+        // }
 
-        while(!st.empty())
-            st.pop();
+        // while(!st.empty())
+        //     st.pop();
 
-        for(int i=n-1;i>=0;i--){
-            while(!st.empty() && heights[st.top()] >= heights[i]){
-                st.pop();
-            }
+        // for(int i=n-1;i>=0;i--){
+        //     while(!st.empty() && heights[st.top()] >= heights[i]){
+        //         st.pop();
+        //     }
 
-            if(st.empty())
-                rightsmall[i] = n-1;
-            else
-                rightsmall[i] = st.top() - 1;
+        //     if(st.empty())
+        //         rightsmall[i] = n-1;
+        //     else
+        //         rightsmall[i] = st.top() - 1;
             
-            st.push(i);
-        }
+        //     st.push(i);
+        // }
 
+        // int maxA = 0;
+
+        // for(int i=0;i<n;i++){
+        //     maxA = max(maxA, heights[i] * (rightsmall[i]-leftsmall[i]+1));
+        // }
+
+        // return maxA;
+
+        // ============================        Approach-3(Most Optimized)      =====================================
+
+        stack<int> st;
         int maxA = 0;
+        int n = heights.size();
+        for(int i=0;i<=n;i++){
+            while(!st.empty() && (i == n || heights[st.top()] >= heights[i])){
+                int height = heights[st.top()];
 
-        for(int i=0;i<n;i++){
-            maxA = max(maxA, heights[i] * (rightsmall[i]-leftsmall[i]+1));
+                st.pop();
+                int width;
+                if(st.empty())
+                    width = i;
+                else
+                    width = i - st.top() - 1;
+                
+                maxA = max(maxA, width * height); 
+            }
+
+            st.push(i);
         }
 
         return maxA;
