@@ -11,6 +11,9 @@ class Solution{
     public:
     int closest3Sum(int a[], int n, int target)
     {
+        if(n < 3){
+            return INT_MAX;
+        }
         sort(a,a+n);
         
         int ans = a[0] + a[1] + a[2];
@@ -55,4 +58,4 @@ int main()
         cout<<obj.closest3Sum(Arr, N, X)<<endl;
     }
     return 0;
-}  // } Driver Code Ends
+}  // } Driver Code Endss
