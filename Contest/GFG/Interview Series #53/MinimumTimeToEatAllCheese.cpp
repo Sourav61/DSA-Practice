@@ -11,7 +11,7 @@ using namespace std;
 class Solution {
   public:
     int dis(int i,int j,int mice[],int cheese[]){
-        return abs(i-j);
+        return abs(mice[j] - cheese[i]);
     }
 
     int minTimeToEat(int N, int M, int mice[], int cheese[]) {
