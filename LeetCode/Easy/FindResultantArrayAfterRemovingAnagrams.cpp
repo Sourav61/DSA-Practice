@@ -48,7 +48,7 @@ public:
         for(int i=1;i<n;i++){
             string s = words[i];
             sort(s.begin(),s.end());
-            if(x == z)
+            if(f == s)
                 continue;
             else{
                 ans.push_back(words[i]);
