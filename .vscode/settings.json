@@ -15,7 +15,13 @@
         "xstring": "cpp",
         "xutility": "cpp",
         "ios": "cpp",
-        "xiosbase": "cpp"
+        "xiosbase": "cpp",
+        "unordered_map": "cpp",
+        "*.tcc": "cpp",
+        "string": "cpp",
+        "unordered_set": "cpp",
+        "xhash": "cpp",
+        "xtree": "cpp"
     },
     "C_Cpp.errorSquiggles": "Disabled"
 }
