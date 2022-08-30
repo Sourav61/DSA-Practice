@@ -22,7 +22,14 @@
     "unordered_set": "cpp",
     "xhash": "cpp",
     "xtree": "cpp",
-    "ostream": "cpp"
+    "ostream": "cpp",
+    "deque": "cpp",
+    "forward_list": "cpp",
+    "list": "cpp",
+    "chrono": "cpp",
+    "format": "cpp",
+    "map": "cpp",
+    "set": "cpp"
   },
   "C_Cpp.errorSquiggles": "Disabled"
 }
