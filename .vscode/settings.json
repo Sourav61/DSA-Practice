@@ -29,7 +29,11 @@
     "chrono": "cpp",
     "format": "cpp",
     "map": "cpp",
-    "set": "cpp"
+    "set": "cpp",
+    "ratio": "cpp",
+    "functional": "cpp",
+    "queue": "cpp",
+    "stack": "cpp"
   },
   "C_Cpp.errorSquiggles": "Disabled"
 }
