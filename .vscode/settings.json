@@ -48,7 +48,8 @@
     "exception": "cpp",
     "iterator": "cpp",
     "mutex": "cpp",
-    "stop_token": "cpp"
+    "stop_token": "cpp",
+    "algorithm": "cpp"
   },
   "C_Cpp.errorSquiggles": "Disabled"
 }
