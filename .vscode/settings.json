@@ -33,7 +33,22 @@
     "ratio": "cpp",
     "functional": "cpp",
     "queue": "cpp",
-    "stack": "cpp"
+    "stack": "cpp",
+    "type_traits": "cpp",
+    "memory": "cpp",
+    "optional": "cpp",
+    "fstream": "cpp",
+    "future": "cpp",
+    "istream": "cpp",
+    "shared_mutex": "cpp",
+    "sstream": "cpp",
+    "streambuf": "cpp",
+    "thread": "cpp",
+    "tuple": "cpp",
+    "exception": "cpp",
+    "iterator": "cpp",
+    "mutex": "cpp",
+    "stop_token": "cpp"
   },
   "C_Cpp.errorSquiggles": "Disabled"
 }
