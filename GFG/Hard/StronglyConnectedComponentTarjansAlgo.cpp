@@ -10,11 +10,12 @@ using namespace std;
 class Solution
 {
 public:
-    int time = 0;
-    vector < vector<int> res;
-    void dfs(int u, vector<int> &disc, vector<int> &low, stack<int> &st, vector<bool> &inStack)
+    int timer = 0;
+    vector<vector<int>> res;
+
+    void dfs(int u, vector<int> &disc, vector<int> &low, stack<int> &st, vector<bool> &inStack, vector<int> adj[])
     {
-        disc[u] = low[u] = time++;
+        disc[u] = low[u] = timer++;
         st.push(u);
         inStack[u] = true;
 
@@ -22,10 +23,10 @@ public:
         {
             if (disc[v] == -1)
             {
-                dfs(v, disc, low, st, adj);
+                dfs(v, disc, low, st, inStack, adj);
                 low[u] = min(low[u], low[v]);
             }
-            else if (inStack(v))
+            else if (inStack[v])
             {
                 low[u] = min(low[u], disc[v]);
             }
@@ -43,15 +44,14 @@ public:
             ans.push_back(st.top());
             inStack[st.top()] = false;
             st.pop();
+            sort(ans.begin(), ans.end());
+            res.push_back(ans);
         }
     }
 
-    // Function to return a list of lists of integers denoting the members
-    // of strongly connected components in the given graph.
     vector<vector<int>> tarjans(int V, vector<int> adj[])
     {
-        vector<int> disc(V, -1);
-        vector<int> low(V, -1);
+        vector<int> disc(V, -1), low(V, -1);
         vector<bool> inStack(V, false);
         stack<int> st;
 
@@ -59,9 +59,11 @@ public:
         {
             if (disc[i] == -1)
             {
-                dfs(i, disc, low, st, inStack);
+                dfs(i, disc, low, st, inStack, adj);
             }
         }
+        sort(res.begin(), res.end());
+        return res;
     }
 };
 
