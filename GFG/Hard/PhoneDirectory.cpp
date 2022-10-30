@@ -9,136 +9,82 @@ using namespace std;
 // } Driver Code Ends
 // User function Template for C++
 
-struct Node
-{
-    Node *links[26];
-    bool flag = false;
-
-    bool containsKey(char ch)
-    {
-        return (links[ch - 'a'] != NULL);
-    }
-
-    void put(char ch, Node *node)
-    {
-        links[ch - 'a'] = node;
-    }
-
-    Node *get(char ch)
-    {
-        return links[ch - 'a'];
-    }
-
-    void setEnd()
-    {
-        flag = true;
-    }
-
-    bool isEnd()
-    {
-        return flag;
-    }
-};
-
-class Trie
-{
-private:
-    Node *root;
-
-public:
-    Trie()
-    {
-        root = new Node();
-    }
-
-    void insert(string word)
-    {
-        Node *node = root;
-
-        for (int i = 0; i < word.length(); i++)
-        {
-            if (!node->containsKey(word[i]))
-            {
-                node->put(word[i], new Node());
-            }
-            node = node->get(word[i]);
-        }
-
-        node->setEnd();
-    }
-
-    bool search(string word)
-    {
-        Node *node = root;
-        for (int i = 0; i < word.length(); i++)
-        {
-            if (!node->containsKey(word[i]))
-            {
-                return false;
-            }
-
-            node = node->get(word[i]);
-        }
-
-        return node->isEnd();
-    }
-
-    bool startsWith(string prefix)
-    {
-        Node *node = root;
-
-        for (int i = 0; i < prefix.length(); i++)
-        {
-            if (!node->containsKey(prefix[i]))
-            {
-                return false;
-            }
-
-            node = node->get(prefix[i]);
-        }
-
-        return true;
-    }
-};
-
 class Solution
 {
 public:
-    vector<vector<string>> displayContacts(int n, string contact[], string s)
+    struct TrieNode
     {
-        map<string, int> mp;
-
-        for (int i = 0; i < n; i++)
+        TrieNode *child[26];
+        bool isEnd;
+        TrieNode()
         {
-            mp[contact[i]]++;
+            for (int i = 0; i < 26; i++)
+                child[i] = NULL;
+            isEnd = false;
         }
+    };
+    class Trie
+    {
+        TrieNode *root;
 
-        vector<vector<string>> ans;
-
-        for (int i = 0; i < s.size(); i++)
+    public:
+        Trie()
         {
-            vector<string> v;
-
-            for (auto x : mp)
+            root = new TrieNode();
+        }
+        void insert(string &s)
+        {
+            TrieNode *curr = root;
+            for (int i = 0; i < s.length(); i++)
             {
-                if (x.first.substr(0, i + 1) == s.substr(0, i + 1))
+                int index = s[i] - 'a';
+                if (curr->child[index] == NULL)
+                    curr->child[index] = new TrieNode();
+                curr = curr->child[index];
+            }
+            curr->isEnd = true;
+        }
+        void dfs(string s, TrieNode *curr, vector<string> &vec)
+        {
+            if (curr->isEnd == true)
+                vec.push_back(s);
+            for (int i = 0; i < 26; i++)
+            {
+                if (curr->child[i] != NULL)
                 {
-                    v.push_back(x.first);
+                    s += ('a' + i);
+                    dfs(s, curr->child[i], vec);
+                    s.pop_back();
                 }
             }
-
-            if (v.size() == 0)
-            {
-                v.push_back("0");
-            }
-
-            ans.push_back(v);
         }
-
+        vector<string> findit(string pre)
+        {
+            TrieNode *curr = root;
+            for (int i = 0; pre[i] != '\0'; i++)
+            {
+                int idx = pre[i] - 'a';
+                if (curr->child[idx] == NULL)
+                    return {"0"};
+                else
+                    curr = curr->child[idx];
+            }
+            vector<string> vec;
+            dfs(pre, curr, vec);
+            return vec;
+        }
+    };
+    vector<vector<string>> displayContacts(int n, string contact[], string s)
+    {
+        vector<vector<string>> ans;
+        Trie trie;
+        for (int i = 0; i < n; i++)
+            trie.insert(contact[i]);
+        for (int i = 0; i < s.length(); i++)
+            ans.push_back(trie.findit(s.substr(0, i + 1)));
         return ans;
     }
 };
-
 //{ Driver Code Starts.
 
 int main()
