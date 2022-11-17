@@ -1,0 +1,52 @@
+// https://leetcode.com/problems/sum-of-beauty-of-all-substrings/description/
+
+#include <bits/stdc++.h>
+using namespace std;
+
+class Solution
+{
+public:
+    int beautySum(string s)
+    {
+        int res = 0;
+        int n = s.length();
+        for (int i = 0; i < n; i++)
+        {
+            vector<int> mp(26, 0);
+            for (int j = i; j < n; j++)
+            {
+                mp[s[j] - 'a']++;
+                int maxi = 0, mini = 1e9;
+                if (mp.size() == 1)
+                {
+                    continue;
+                }
+                for (auto &x : mp)
+                {
+                    maxi = max(x, maxi);
+                    if (x >= 1)
+                    {
+                        mini = min(x, mini);
+                    }
+                }
+
+                if (maxi != mini && mini != 1e9)
+                {
+                    res += maxi - mini;
+                }
+            }
+        }
+
+        return res;
+    }
+};
+
+int main()
+{
+
+    Solution obj;
+
+    cout << obj.beautySum("aabcb");
+
+    return 0;
+}
