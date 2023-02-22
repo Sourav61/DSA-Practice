@@ -1,0 +1,46 @@
+// https://leetcode.com/problems/find-the-kth-largest-integer-in-the-array/description/
+
+#include <bits/stdc++.h>
+using namespace std;
+
+class compare
+{
+public:
+    bool operator()(string &b, string &a)
+    {
+        if (a.size() != b.size())
+            return a.size() < b.size();
+        return a < b;
+    }
+};
+
+class Solution
+{
+public:
+    string kthLargestNumber(vector<string> &nums, int k)
+    {
+        priority_queue<string, vector<string>, compare> minH;
+        for (string &num : nums)
+        {
+            minH.push(num);
+            if (minH.size() > k)
+            {
+                minH.pop();
+            }
+        }
+
+        return minH.top();
+    }
+};
+
+int main()
+{
+
+    Solution obj;
+
+    vector<string> nums = {"3", "6", "7", "10"};
+
+    cout << obj.kthLargestNumber(nums, 3);
+
+    return 0;
+}
